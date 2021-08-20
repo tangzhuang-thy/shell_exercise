@@ -1,3 +1,4 @@
+1.
 # use_docker.py
 # 脚本功能：提取docker运行容器的内存、cpu资源消耗信息
 # 脚本使用： python3 use_docker.py --name=serene_gould 
@@ -14,4 +15,12 @@ docker开放远程访问，在作为docker远程服务的centos8机器中配置�
 # vim /usr/lib/systemd/system/docker.service  
 [Service]  
 ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock  
+
+2.
+# md5_check.sh
+# 脚本功能：每隔五分钟检查world.txt文件的md5信息，如果文件内容被更改，则发出预警
+crontab -e
+*/5 * * * * /bin/bash ~/md5_check.sh ~/world.txt >> check_result.txt
+
+
 
