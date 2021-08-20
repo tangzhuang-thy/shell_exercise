@@ -9,6 +9,7 @@ container_name = args.name
 
 
 def jinzhi_convert(value):
+    “”“将10进制的B转换为对应的KB、MB等”“”
     units = ["B", "KB", "MB", "GB", "TB", "PB"]
     size = 1024.0
     for i in range(len(units)):
